@@ -11,6 +11,27 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <form action="jsp/procesar.jsp" method="get">
+                        <p style="color: #ffffff">
+				<label class="izq" for="nombres">Nombre Rubica</label>
+				<input class="der" type="text" name="nombres" id="valor1">
+			</p>
+			<p style="color: #ffffff">
+				<label class="izq" for="identificacion">Descripcion</label>
+				<input class="der" type="text" name="identificacion" id="valor2">
+			</p>
+			<p style="color: #ffffff">
+				<label class="izq"  for="edad">Cantidad de aspectos</label>
+				<input class="der" type="text" name="edad" id="resultado">
+			</p>
+                        <p style="color: #ffffff">
+				<label class="izq"  for="edad">Cantidad de sub aspectos</label>
+				<input class="der" type="text" name="edad" id="resultado">
+			</p>
+			<p style="color: #ffffff">
+				<input type="submit" value=" Enviar ">
+				<input type="reset" value="Limpiar">
+			</p>
+            </form>
     </body>
 </html>
