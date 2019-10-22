@@ -13,5 +13,11 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <%= request.getParameter("nombres") %>
+        <%= request.getParameter("descripcion") %>
+        <%= request.getParameter("cantidad-aspectos") %>
+        <%= request.getParameter("cantidad-sub-aspectos") %>
+        <%= request.getParameter("cantidad-desemp") %>
+        
     </body>
 </html>
