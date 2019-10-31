@@ -28,8 +28,64 @@ nav a{
     font-size: 20px;
 }
 
-.formulario {
-    width: 40%;
-    height: 500px;
-    background: lightblue;
+.main {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    width: 60%;
+    height: 80%;
+    margin: 5% auto;
+}
+.main form{
+    margin: auto;
+    width: 100%;
+    padding:10px;
+    text-align: center;
+    vertical-align: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.main h2{
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+.main form div{
+    font-size: 20px;
+    width: 80%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+.main form div .casilla-input, .casilla-text-area{
+    width: 90%;
+}
+.boton-registrar, .boton-limpiar{
+  width: 50%;
+  margin: 10px;
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.boton-limpiar {
+    background: aqua;
+}
+.formulario input[type=text], input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
