@@ -30,8 +30,8 @@
 	<div class="contenedor">
 		<h1>Esta cologedo como #nombre</h1>
 		<div class="mensaje">
-			<p>Empieza a creando tu rubrica en Nueva Rubrica</p>
-			<p>Empieza creando tu rubrica en Nueva Rubrica</p>
+			<p>Empieza a creando tu rubrica en Nueva Rubrica.</p>
+			<p>Empieza creando tu rubrica en Nueva Rubrica.</p>
 		</div>
 	</div>
 </body>
