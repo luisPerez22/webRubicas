@@ -26,7 +26,8 @@ function validarFormularioRubrica(){
     }else if(cantidad_aspectos == null || cantidad_aspectos.length == 0 || /^\s+$/.test(cantidad_aspectos) || isNaN(cantidad_aspectos) || cantidad_aspectos<=0){
         document.getElementById("cantidad_aspectos").style.borderColor = "#F52C01";
         if (cantidad_aspectos<=0){
-            alert("el valor de numero de aspectos no puede ser cero ni negativo")
+            
+            setTimeout(function() { alert("el valor de numero de aspectos no puede ser cero ni negativo"); }, 1);
         }
         
         return false;
@@ -36,7 +37,8 @@ function validarFormularioRubrica(){
     }else if(cantidad_desemp == null || cantidad_desemp.length == 0 || /^\s+$/.test(cantidad_desemp) || isNaN(cantidad_desemp) || cantidad_desemp<=0){
         document.getElementById("cantidad_sub_aspectos").style.borderColor = "#F52C01";
         if (cantidad_desemp<=0){
-            alert("el valor de cantidad de desenpeño no puede ser cero ni negativo")
+            setTimeout(function() { alert("el valor de cantidad de desempeño no puede ser cero ni negativo"); }, 1);
+            
         }
         return false;
     }else{
