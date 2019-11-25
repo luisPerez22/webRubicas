@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formulario rubricas alternativa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/script.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="main">
+            <h2 class="titulo" >Formulario Rubica</h2>
+            <form  class="formulario" action="../jsp/newjsp.jsp" method="post" >
+                
+               
+                <button type="button" onclick="appendColumn()" >Agregar desempeño</button>
+                
+                <table border="1S" id="tabla1">
+                    <tbody id="tabla-formulario">
+                    <tr>
+                        
+                        <th>
+                            Aspectos
+                        </th>
+                        <th>
+                            SubAspectos
+                        </th>
+                        <th>
+                            <input class="" type="text" name="desempeno"  >
+                        </th>
+                    </tr>
+                    <tr>
+                        <td ><input class="" type="text" name="aspecto1"  ></td>
+                        <td id="aspec-1">
+                            <input class="" type="text"  name="sub-aspec1-1"  >
+                            <button type="button" onclick="agregarSub(this)">Agregar Subaspecto</button>
+                        </td>
+                        <td></td>
+                       
+                   </tr>
+                    
+                    <tbody>
+                   
+                   
+                    
+                </table>
+                <button type="button" onclick="agregarAspecto()" >Agregar Aspecto</button>
+                
+                <div class="botonera">
+                    <input class="boton-registrar" type="submit" value=" Registrar Rubica ">
+                    <input class="boton-limpiar" type="reset" value="Limpiar">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

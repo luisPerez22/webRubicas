@@ -15,7 +15,7 @@ and open the template in the editor.
     <body>
         <div class="main">
             <h2 class="titulo" >Formulario Rubica</h2>
-            <form  class="formulario" action="" method="post" onsubmit="return  validarFormularioRubrica()">
+            <form  class="formulario" action="" method="post" >
                 <div >
                     <label class="label-input" for="nombres">Nombre Rubica</label>
                     <input class="casilla-input" type="text" name="nombres" id="nombres" >
@@ -27,10 +27,10 @@ and open the template in the editor.
                 <div>
                     <label class="label-input"  for="cantidad_aspectos">Cantidad de aspectos</label>
                     <input class="casilla-input" type="number" name="cantidad_aspectos" id="cantidad_aspectos" >
+                    <button type="button" onclick="agregarSubAspectos()">Agregar SubAspectos</button>
                 </div>
-                <div>
-                    <label class="label-input"  for="cantidad_sub_aspectos">Cantidad de sub aspectos</label>
-                    <input class="casilla-input" type="number" name="cantidad_sub_aspectos" id="cantidad_sub_aspectos" >
+                <div id="sub-aspectos">
+                    
                 </div>
                 <div>
                     <label class="label-input"  for="cantidad_desemp">Cantidad de desempeño</label>
