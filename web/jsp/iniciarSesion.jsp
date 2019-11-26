@@ -12,6 +12,7 @@
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, miximum-scale=3.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../css/estilosLoginSignUp.css">
+        <script src="../js/validacionDatos.js" type="text/javascript"></script>
 	<title>Iniciar Sesion</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
 				<i class="fas fa-key icon"></i>
 				<input type="password" id="clave" name="clave" placeholder="Contraseña">
 			</div>
-			<input type="submit" value="Registrarse" class="button">
+                    <input type="submit" value="Registrarse" class="button" onclick="validarLogin()">
 			<p>Inicie sesion con sus datos previamnete registrados en el sistema.</p>
 			<hr>
 			<p>¿Deseas crear una cuenta? <a class="link" href="../index.jsp">Registrate</a></p>

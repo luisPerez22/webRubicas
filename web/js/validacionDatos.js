@@ -91,3 +91,19 @@ function validarRegistro(){
     
 
 }
+
+function validarLogin(){
+    usuario=document.getElementById("usuario").value;
+    clave=document.getElementById("clave").value;
+    
+    if(usuario.length==0 || clave.length==0){
+        alert("Por favor llenar todos los campos");
+        return false;
+    }else if(usuario.length>50){
+        alert("El usuario es muy largo");
+        return false;
+    }else if(clave.length>50){
+        alert("La clave es muy larga");
+        return false;
+    }
+}
