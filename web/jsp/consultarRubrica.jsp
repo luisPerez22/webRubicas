@@ -35,7 +35,7 @@
                         <input type="text" placeholder="Nombre o ID de la rubrica">
                     </div>
                     <input type="submit" value="Buscar" class="button">
-                    <p>Puede buscar una rubrica por ID o por nombre de la misma.</p>
+                    <p>Puede buscar una rubrica por ID o por nombre de la misma</p>
                  
                 </div>
             </form>
