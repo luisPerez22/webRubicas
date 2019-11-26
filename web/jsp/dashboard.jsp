@@ -26,7 +26,7 @@
 			<li><a href=""><i class="fas fa-door-open icon"></i>Cerrar Sesion</a></li>
 		</ul>
 	</div>
-	<div class="contenedor">
+	<div class="contenedorPrincipal">
 		<h1>Esta cologedo como #nombre</h1>
 		<div class="mensaje">
 			<p>Empieza a creando tu rubrica en Nueva Rubrica</p>
