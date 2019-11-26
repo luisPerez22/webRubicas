@@ -48,55 +48,182 @@
 //}
 
 
-
-function agregarSubAspectos(){
-    
-    var catidadAspectos =document.getElementById("cantidad_aspectos").value;
-    var elementos= document.getElementById("sub-aspectos");
-    elementos.innerHTML='';
-    for (var i = 1;i <= catidadAspectos; i++) {
-        console.log("oye")
-        elementos.innerHTML +='<label class="label-input"  >Numero sub aspectos del Aspecto '+ i+'</label>';
-        elementos.innerHTML += '<input class="casilla-input" type="number" name="cantidad_sub_aspectos[]" id="cantidad_sub_aspectos" >';
-        
-    }
-    
-}
+document.addEventListener('DOMContentLoaded', function () {
+    // your code goes here
+    document.getElementById("desempeIni").height = document.getElementById("tabla1").rows[1].cells[1].clientHeight
+}, false);
 
 
-function agregarSub(value){
+
+
+
+function agregarSub(value) {
+    console.log(value);
     var boton = value.outerHTML;
-    var padre= value.parentElement;
-    var campo=document.createElement("INPUT");
-    var numeroSub=padre.getElementsByTagName("input").length
-    campo.type= "text";
-    campo.name= "sub-aspec"+padre.id.split("-")[1]+"-"+(numeroSub+1) ;
-    padre.insertBefore(campo,value);
-    
+    var padre = value.previousElementSibling;
+    var padre2 = value.parentElement;
+    var row = padre.insertRow(-1)
+    var cell = row.insertCell(-1)
+
+
+
+    var campo = document.createElement("INPUT");
+    var numeroSub = padre.getElementsByTagName("tr").length
+    campo.type = "text";
+    campo.name = "sub-aspec" + padre2.id.split("-")[1] + "-" + (numeroSub);
+    cell.appendChild(campo);
+
+    console.log(padre2.nextElementSibling)
+
+    var columna2 = document.getElementById("table-aspec-" + padre2.id.split("-")[1])
+    var row2 = columna2.insertRow(-1);
+    var cell2 = row2.insertCell(-1)
+    cell2.parentElement.previousElementSibling.getElementsByTagName("td")[0].height = cell.clientHeight + 2
+    cell2.innerHTML = "&nbsp";
+    cell2.height = cell.clientHeight + 2
+
+    actualizarDesepe()
+
 }
 
-function agregarAspecto(){
-    var cantidadAsp=document.getElementById("tabla-formulario").getElementsByTagName("TR").length;
-    var campo = document.createElement("TR");
-    
-    var htmltexto='<td ><input class="" type="text" name="aspecto'+cantidadAsp + '"  ></td>';
-    htmltexto += '<td id="aspec-'+cantidadAsp+'">';
-    htmltexto+='<input class="" type="text"  name="sub-aspec'+cantidadAsp+'-1"  >';
-    htmltexto+='<button type="button" onclick="agregarSub(this)">Agregar Subaspecto</button>';
-    htmltexto+='</td>';
-    campo.innerHTML=htmltexto;
-    document.getElementById("tabla-formulario").appendChild(campo);
-    
+function agregarAspecto() {
+
+
+    var tabla = document.getElementById("tabla1");
+    var cantidadAsp = tabla.rows.length;
+    var row = tabla.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+
+
+    cell1.innerHTML = '<input class="" type="text" name="aspecto-' + cantidadAsp + '"  >'
+    cell2.id = 'aspec-' + cantidadAsp
+    cell2.style = "position:relative";
+
+    var htmltexto = '<table border="1S" style="width: 100%; height: 100%">';
+    htmltexto += '<tbody><tr><td>'
+    htmltexto += '<input class="" type="text"  name="sub-aspec' + cantidadAsp + '-1"  >';
+    htmltexto += '</td></tr></tbody></table>'
+    htmltexto += '<button type="button" style="display: flex; position: absolute; top:0; right: 0" onclick="agregarSub(this)">+</button>';
+    htmltexto += '<button type="button"  style="display: flex; position: absolute; bottom: 0; right: 0" onclick="eliminarSubAspecto(this)"> -</button>'
+
+    cell2.innerHTML = htmltexto;
+
+    var htmltexto2 = '<table border="1S" id="table-aspec-' + cantidadAsp + '" style="width: 100%; height: 100%">'
+    htmltexto2 += '<tbody ><tr ><td style="height: ' + document.getElementById("tabla1").rows[cantidadAsp].cells[1].clientHeight + 'px"></td></tr></tbody></table>'
+    cell3.innerHTML = htmltexto2;
+
+
+    actualizarDesepe();
+
 }
 
 
-function appendColumn() {
-    var listaRows = document.getElementById('tabla-formulario').getElementsByTagName("TR");
-        
-    
-    for (var i =0;i<listaRows.length;i++){
-        listaRows[i].appendChild(document.createElement("TD"))
-        
+function agregarDesempe() {
+
+
+    var listaRows = document.getElementById('tabla1').rows;
+    //console.log(listaRows[0].cells[listaRows[0].cells.length-1])
+    listaRows[0].insertCell(-1).innerHTML = '<input style="width: 60px; padding: 0;margin: 0"  type="text" name="desempeno-' + (listaRows[0].cells.length - 2) + '"  >';
+    listaRows[0].cells[listaRows[0].cells.length - 1].width = "60px"
+    //console.log(listaRows[1].cells[2])
+
+    for (var x = 1; x < listaRows.length; x++) {
+
+
+        for (var i = 3; i < listaRows[0].cells.length; i++) {
+            console.log(listaRows[0].cells.length + "-" + listaRows[x].cells.length)
+            if (listaRows[0].cells.length != listaRows[x].cells.length) {
+                var cell = listaRows[x].insertCell(i);
+                cell.appendChild(listaRows[x].cells[2].firstElementChild.cloneNode(true))
+
+            }
+
+
+        }
+
+
+        for (var z = 3; z < listaRows[0].cells.length; z++) {
+            if (listaRows[0].cells.length == listaRows[x].cells.length) {
+                var cell = listaRows[x].cells[z];
+                cell.innerHTML = null
+                cell.appendChild(listaRows[x].cells[2].firstElementChild.cloneNode(true))
+
+            }
+
+        }
+
+
     }
-    
+
+
 }
+
+
+function actualizarDesepe() {
+    var listaRows = document.getElementById('tabla1').rows;
+    for (var x = 1; x < listaRows.length; x++) {
+
+
+        for (var i = 3; i < listaRows[0].cells.length; i++) {
+            if (listaRows[0].cells.length != listaRows[x].cells.length) {
+                var cell = listaRows[x].insertCell(i);
+                cell.appendChild(listaRows[x].cells[2].firstElementChild.cloneNode(true))
+
+            }
+
+        }
+
+        for (var z = 3; z < listaRows[0].cells.length; z++) {
+            if (listaRows[0].cells.length == listaRows[x].cells.length) {
+                var cell = listaRows[x].cells[z];
+                cell.innerHTML = null
+                cell.appendChild(listaRows[x].cells[2].firstElementChild.cloneNode(true))
+
+            }
+
+        }
+
+
+    }
+
+}
+
+
+function eliminarDesenpe() {
+    var tabla = document.getElementById('tabla1');
+
+    if (tabla.rows[0].cells.length > 3) {
+        for (var i = 0; i < tabla.rows.length; i++) {
+            tabla.rows[i].deleteCell(-1)
+        }
+    }
+
+
+
+}
+
+
+function eliminarAspecto() {
+    var tabla = document.getElementById('tabla1');
+
+    if (tabla.rows.length > 2) {
+        tabla.deleteRow(-1)
+    }
+
+
+}
+
+function eliminarSubAspecto(valor) {
+    var tabla = valor.parentElement.firstElementChild;
+    var tabla2 = valor.parentElement.nextElementSibling.firstElementChild;
+    if (tabla.rows.length > 1) {
+        tabla.deleteRow(-1)
+        tabla2.deleteRow(-1)
+        actualizarDesepe()
+    }
+
+}
+
+
