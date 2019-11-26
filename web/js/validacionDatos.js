@@ -48,7 +48,6 @@ function validarFormularioRubrica(){
 }
 
 function validarRegistro(){
-    
     var expresion;
     
     nombres=document.getElementById("nombres").value;
