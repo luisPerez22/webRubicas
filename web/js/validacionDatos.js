@@ -46,3 +46,49 @@ function validarFormularioRubrica(){
     }
     
 }
+
+function validarRegistro(){
+    
+    var expresion;
+    
+    nombres=document.getElementById("nombres").value;
+    apellidos=document.getElementById("apellidos").value;
+    areaconocimiento=document.getElementById("areaconocimiento").value;
+    correo=document.getElementById("correo").value;
+    usuario=document.getElementById("usuario").value;
+    clave=document.getElementById("clave").value;
+    
+    
+    expresion = /\w+@+\w+\.+[a-z]/;
+    
+    
+    if(nombres.length==0 || apellidos.length==0 || areaconocimiento.length==0 || correo.length==0 || usuario.length==0 || clave.length==0){
+        alert("Por favor llenar todos los campos");
+        return false;
+    }else if(nombres.length>50){
+        alert("Los nombres son muy largos");
+        return false;
+    }else if(apellidos.length>50){
+        alert("Los apellidos son muy largos");
+        return false;
+    }else if(areaconocimiento.length>50){
+        alert("El areaconocimiento es muy largo");
+        return false;
+    }else if(!expresion.test(correo)){
+        alert("El formato del correo no es valido");
+        
+    }else if(correo.length>50){
+        alert("El correo es muy largo");
+        return false;
+    }else if(usuario.length>50){
+        alert("El usuario es muy largo");
+        return false;
+    }else if(clave.length>50){
+        alert("La clave es muy larga");
+        return false;
+    }
+    
+    
+    
+
+}
