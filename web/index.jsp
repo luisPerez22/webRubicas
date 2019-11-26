@@ -20,27 +20,27 @@
 		<div class="contenedor">
 			<div class="input-contenedor">
 				<i class="fas fa-user icon"></i>
-                                <input type="text" id="nombres" name="nombres" placeholder="Nombres del Usuario" required>
+                                <input type="text" id="nombres" name="nombres" placeholder="Nombres del Usuario" maxlength="50" required>
 			</div>
 			<div class="input-contenedor">
 				<i class="fas fa-user icon"></i>
-				<input type="text" id="apellidos" name="apellidos" placeholder="Apellidos del Usuario" required>
+				<input type="text" id="apellidos" name="apellidos" placeholder="Apellidos del Usuario" maxlength="50" required>
 			</div>
 			<div class="input-contenedor">
 				<i class="fas fa-award icon"></i>
-				<input type="text" id="areaconocimiento" name="areaconocimiento" placeholder="Area del conocimiento" required>
+				<input type="text" id="areaconocimiento" name="areaconocimiento" placeholder="Area del conocimiento" maxlength="50" required>
 			</div>
 			<div class="input-contenedor">
 				<i class="fas fa-envelope icon"></i>
-				<input type="email" id="correo" name="correo" placeholder="Correo electronico" required>
+				<input type="email" id="correo" name="correo" placeholder="Correo electronico" maxlength="50" required>
 			</div>
 			<div class="input-contenedor">
 				<i class="fas fa-quote-left icon"></i>
-				<input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario (Nickname)" required>
+				<input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario (Nickname)" maxlength="50" required>
 			</div>
 			<div class="input-contenedor">
 				<i class="fas fa-key icon"></i>
-				<input type="password" id="clave" name="clave" placeholder="Contraseña" required>
+				<input type="password" id="clave" name="clave" placeholder="Contraseña" maxlength="50" required>
 			</div>
 			<input type="submit" value="Registrarse" class="button">
 			<p>Registrarse con sus datos de docente para gestionar rubricas</p>
