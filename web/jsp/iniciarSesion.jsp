@@ -21,16 +21,16 @@
 		<div class="contenedor">
 			<div class="input-contenedor">
 				<i class="fas fa-user icon"></i>
-				<input type="text" id="usuario" name="usuario" placeholder="Nombres del Usuario">
+				<input type="text" id="usuario" name="usuario" placeholder="Nombres del Usuario" maxlength="50" required>
 			</div>
 			<div class="input-contenedor">
 				<i class="fas fa-key icon"></i>
-				<input type="password" id="clave" name="clave" placeholder="Contraseña">
+				<input type="password" id="clave" name="clave" placeholder="Contraseña" maxlength="50" required>
 			</div>
                     <input type="submit" value="Registrarse" class="button" onclick="validarLogin()">
 			<p>Inicie sesion con sus datos previamnete registrados en el sistema.</p>
 			<hr>
-			<p>¿Deseas crear una cuenta? <a class="link" href="../index.jsp">Registrate</a></p>
+			<p>¿Deseas crear una cuenta? <a class="link" href="../index.jsp">Iniciar Sesion</a></p>
 		</div>
 	</form>
 </body>
