@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Formulario rubricas</title>
+        <title>Formulario rubricas alternativa</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
@@ -15,7 +15,8 @@ and open the template in the editor.
     <body>
         <div class="main">
             <h2 class="titulo" >Formulario Rubica</h2>
-            <form  class="formulario" action="" method="post" >
+            <form  class="formulario" action="../jsp/newjsp.jsp" method="post" >
+
                 <div >
                     <label class="label-input" for="nombres">Nombre Rubica</label>
                     <input class="casilla-input" type="text" name="nombres" id="nombres" >
@@ -24,18 +25,84 @@ and open the template in the editor.
                     <label class="label-input" for="descripcion">Descripcion</label>
                     <textarea class="casilla-text-area" name="descripcion" id="descripcion"   ></textarea>
                 </div>
+
                 <div>
-                    <label class="label-input"  for="cantidad_aspectos">Cantidad de aspectos</label>
-                    <input class="casilla-input" type="number" name="cantidad_aspectos" id="cantidad_aspectos" >
-                    <button type="button" onclick="agregarSubAspectos()">Agregar SubAspectos</button>
+                    <button type="button" onclick="agregarDesempe()" >Agregar desempeño</button>
+                    <button type="button" onclick="eliminarDesenpe()" >Quitar desempeño</button>
+
                 </div>
-                <div id="sub-aspectos">
-                    
-                </div>
+
+
+                <table border="1S" style="width: 100%" id="tabla1">
+                    <tbody id="tabla-formulario">
+                        <tr>
+
+                            <th>
+                                Aspectos
+                            </th>
+                            <th>
+                                SubAspectos
+                            </th>
+                            <th style="width: 60px" >
+                                <input style="width: 60px; padding: 0;margin: 0"  type="text" name="desempeno-1"  >
+                            </th>
+                        </tr>
+                        <tr>
+                            <td ><input class="" type="text" name="aspecto-1"  ></td>
+                            <td id="aspec-1" style="position:relative">
+
+                                <table border="1S" style="width: 100%; height: 100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input class="" type="text"  name="sub-aspec1-1"  >
+
+                                            </td>
+
+                                        </tr>
+
+
+                                    </tbody>
+
+                                </table>
+                                <button type="button"  style="display: flex; position: absolute; top:0; right: 0" onclick="agregarSub(this)">+</button>
+                                <button type="button"  style="display: flex; position: absolute; bottom: 0; right: 0" onclick="eliminarSubAspecto(this)"> -</button>
+
+                            </td>
+                            <td style="padding: 0" >
+                                <table border="1S" id="table-aspec-1" style="width: 100%; height: 100%">
+                                    <tbody >
+                                        <tr >
+                                            <td id="desempeIni">
+
+
+                                            </td>
+
+                                        </tr>
+
+
+                                    </tbody>
+
+                                </table>
+
+
+                            </td>
+
+                        </tr>
+
+                    <tbody>
+
+
+
+                </table>
+
                 <div>
-                    <label class="label-input"  for="cantidad_desemp">Cantidad de desempeño</label>
-                    <input class="casilla-input" type="number" name="cantidad_desemp" id="cantidad_desemp" >
+                    <button type="button" onclick="agregarAspecto()" >Agregar Aspecto</button>
+                    <button type="button" onclick="eliminarAspecto()" >Quitar Aspecto</button>
+
                 </div>
+
+
                 <div class="botonera">
                     <input class="boton-registrar" type="submit" value=" Registrar Rubica ">
                     <input class="boton-limpiar" type="reset" value="Limpiar">
