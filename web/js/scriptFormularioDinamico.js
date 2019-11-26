@@ -10,6 +10,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     // your code goes here
     document.getElementById("desempeIni").height = document.getElementById("tabla1").rows[1].cells[1].clientHeight
+    
+      actualizarDesepe()
+    
 }, false);
 
 
