@@ -24,7 +24,7 @@
 			</div>
 			<div class="input-contenedor">
 				<i class="fas fa-user icon"></i>
-				<input type="text" id="apeliidos" name="apellidos" placeholder="Apellidos del Usuario" required>
+				<input type="text" id="apellidos" name="apellidos" placeholder="Apellidos del Usuario" required>
 			</div>
 			<div class="input-contenedor">
 				<i class="fas fa-award icon"></i>
