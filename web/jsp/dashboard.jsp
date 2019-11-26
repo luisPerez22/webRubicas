@@ -1,18 +1,17 @@
 <%-- 
     Document   : dashboard
-    Created on : 25-nov-2019, 14:50:49
+    Created on : 25-nov-2019, 20:22:35
     Author     : LUIS-PEREZ
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, miximum-scale=3.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="estilosDashBoard.css">
-	<title>Document</title>
+	<link rel="stylesheet" href="../css/estilosDashboard.css">
+	<title>DashBoard</title>
 		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
@@ -27,11 +26,11 @@
 			<li><a href=""><i class="fas fa-door-open icon"></i>Cerrar Sesion</a></li>
 		</ul>
 	</div>
-	<div class="contenedor">
+	<div class="contenedorPrincipal">
 		<h1>Esta cologedo como #nombre</h1>
 		<div class="mensaje">
-			<p>Empieza a creando tu rubrica en Nueva Rubrica.</p>
-			<p>Empieza creando tu rubrica en Nueva Rubrica.</p>
+			<p>Empieza a creando tu rubrica en Nueva Rubrica</p>
+			<p>Empieza creando tu rubrica en Nueva Rubrica</p>
 		</div>
 	</div>
 </body>
