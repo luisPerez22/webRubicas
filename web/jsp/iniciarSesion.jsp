@@ -29,7 +29,7 @@
 			<input type="submit" value="Registrarse" class="button">
 			<p>Inicie sesion con sus datos previamnete registrados en el sistema.</p>
 			<hr>
-			<p>¿Deseas crear una cuenta? <a class="link" href="../index.jsp">Registrate</a></p>
+			<p>¿Deseas crear una cuenta? <a class="link" href="../index.jsp">Iniciar Sesion</a></p>
 		</div>
 	</form>
 </body>
