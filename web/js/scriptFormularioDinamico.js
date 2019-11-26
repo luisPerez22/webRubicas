@@ -5,47 +5,6 @@
  */
 
 
-//function validarFormularioRubrica(){
-//    nombre = document.getElementById("nombres").value;
-//    descripcion = document.getElementById("descripcion").value;
-//    cantidad_aspectos = document.getElementById("cantidad_aspectos").value;
-//    cantidad_sub_aspectos = document.getElementById("cantidad_sub_aspectos").value;
-//    cantidad_desemp = document.getElementById("cantidad_desemp").value;
-//    document.getElementById("nombres").style.borderColor = "#FFFFFF";
-//    document.getElementById("descripcion").style.borderColor = "#FFFFFF";
-//    document.getElementById("cantidad_aspectos").style.borderColor = "#FFFFFF";
-//    document.getElementById("cantidad_sub_aspectos").style.borderColor = "#FFFFFF";
-//    document.getElementById("cantidad_desemp").style.borderColor = "#FFFFFF";
-//    
-//    if (nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)){
-//        document.getElementById("nombres").style.borderColor = "#F52C01";
-//        return false;
-//    }else if(descripcion == null || descripcion.length == 0 || /^\s+$/.test(descripcion)){
-//        document.getElementById("descripcion").style.borderColor = "#F52C01";
-//        return false;
-//    }else if(cantidad_aspectos == null || cantidad_aspectos.length == 0 || /^\s+$/.test(cantidad_aspectos) || isNaN(cantidad_aspectos) || cantidad_aspectos<=0){
-//        document.getElementById("cantidad_aspectos").style.borderColor = "#F52C01";
-//        if (cantidad_aspectos<=0){
-//            
-//            setTimeout(function() { alert("el valor de numero de aspectos no puede ser cero ni negativo"); }, 1);
-//        }
-//        
-//        return false;
-//    }else if (cantidad_sub_aspectos == null || cantidad_sub_aspectos.length == 0 || /^\s+$/.test(cantidad_sub_aspectos) || isNaN(cantidad_sub_aspectos)){
-//        document.getElementById("cantidad_sub_aspectos").style.borderColor = "#F52C01";
-//        return false;
-//    }else if(cantidad_desemp == null || cantidad_desemp.length == 0 || /^\s+$/.test(cantidad_desemp) || isNaN(cantidad_desemp) || cantidad_desemp<=0){
-//        document.getElementById("cantidad_sub_aspectos").style.borderColor = "#F52C01";
-//        if (cantidad_desemp<=0){
-//            setTimeout(function() { alert("el valor de cantidad de desempeño no puede ser cero ni negativo"); }, 1);
-//            
-//        }
-//        return false;
-//    }else{
-//        return true;
-//    }
-//    
-//}
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -71,6 +30,7 @@ function agregarSub(value) {
     var numeroSub = padre.getElementsByTagName("tr").length
     campo.type = "text";
     campo.name = "sub-aspec" + padre2.id.split("-")[1] + "-" + (numeroSub);
+    campo.setAttribute("class", "sub-aspect")
     cell.appendChild(campo);
 
     console.log(padre2.nextElementSibling)
@@ -78,7 +38,8 @@ function agregarSub(value) {
     var columna2 = document.getElementById("table-aspec-" + padre2.id.split("-")[1])
     var row2 = columna2.insertRow(-1);
     var cell2 = row2.insertCell(-1)
-    cell2.parentElement.previousElementSibling.getElementsByTagName("td")[0].height = cell.clientHeight + 2
+    cell2.setAttribute("class", "check-desempe")
+    cell2.parentElement.previousElementSibling.getElementsByTagName("td")[0].height = cell.clientHeight-2 
     cell2.innerHTML = "&nbsp";
     cell2.height = cell.clientHeight + 2
 
@@ -97,21 +58,21 @@ function agregarAspecto() {
     var cell3 = row.insertCell(2);
 
 
-    cell1.innerHTML = '<input class="" type="text" name="aspecto-' + cantidadAsp + '"  >'
+    cell1.innerHTML = '<input class="aspecto" type="text" name="aspecto-' + cantidadAsp + '"  >'
     cell2.id = 'aspec-' + cantidadAsp
     cell2.style = "position:relative";
 
-    var htmltexto = '<table border="1S" style="width: 100%; height: 100%">';
+    var htmltexto = '<table class="table-sub-aspec" border="1S" style="width: 100%; height: 100%">';
     htmltexto += '<tbody><tr><td>'
-    htmltexto += '<input class="" type="text"  name="sub-aspec' + cantidadAsp + '-1"  >';
+    htmltexto += '<input class="sub-aspect" type="text"  name="sub-aspec' + cantidadAsp + '-1"  >';
     htmltexto += '</td></tr></tbody></table>'
-    htmltexto += '<button type="button" style="display: flex; position: absolute; top:0; right: 0" onclick="agregarSub(this)">+</button>';
-    htmltexto += '<button type="button"  style="display: flex; position: absolute; bottom: 0; right: 0" onclick="eliminarSubAspecto(this)"> -</button>'
+    htmltexto += '<button class="boton-agregar-subaspecto" type="button" style="display: flex; position: absolute; top:0; right: 0" onclick="agregarSub(this)">+</button>';
+    htmltexto += '<button class="boton-quitar-subaspecto" type="button"  style="display: flex; position: absolute; bottom: 0; right: 0" onclick="eliminarSubAspecto(this)"> -</button>'
 
     cell2.innerHTML = htmltexto;
 
-    var htmltexto2 = '<table border="1S" id="table-aspec-' + cantidadAsp + '" style="width: 100%; height: 100%">'
-    htmltexto2 += '<tbody ><tr ><td style="height: ' + document.getElementById("tabla1").rows[cantidadAsp].cells[1].clientHeight + 'px"></td></tr></tbody></table>'
+    var htmltexto2 = '<table class="table-desempe" border="1S" id="table-aspec-' + cantidadAsp + '" style="width: 100%; height: 100%">'
+    htmltexto2 += '<tbody ><tr ><td class="check-desempe" style="height: ' + (document.getElementById("tabla1").rows[cantidadAsp].cells[1].clientHeight - 2) + 'px"></td></tr></tbody></table>'
     cell3.innerHTML = htmltexto2;
 
 
@@ -125,7 +86,7 @@ function agregarDesempe() {
 
     var listaRows = document.getElementById('tabla1').rows;
     //console.log(listaRows[0].cells[listaRows[0].cells.length-1])
-    listaRows[0].insertCell(-1).innerHTML = '<input style="width: 60px; padding: 0;margin: 0"  type="text" name="desempeno-' + (listaRows[0].cells.length - 2) + '"  >';
+    listaRows[0].insertCell(-1).innerHTML = '<input class="casilla-desempe" style="width: 60px; padding: 0;margin: 0"  type="text" name="desempeno-' + (listaRows[0].cells.length - 2) + '"  >';
     listaRows[0].cells[listaRows[0].cells.length - 1].width = "60px"
     //console.log(listaRows[1].cells[2])
 
