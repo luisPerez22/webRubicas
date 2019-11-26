@@ -62,10 +62,18 @@ body{
 	text-align: center;
 	color: #999;
 }
-.contenedorPrincipal{
+.casilla-text-area{
+    width: 100%;
+}
+.main{
         color: white;
 	margin-left: 15%;
-	padding: 5px;
+	padding: 3%;
 	width: 85%;
 	height: 600px;
+}
+.botonera{
+    display: flex;
+    justify-content: center;
+    
 }
