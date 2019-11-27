@@ -29,7 +29,7 @@
 			<li><a href=""><i class="fas fa-filter icon"></i>Buscar</a></li>
 			<li><a href=""><i class="fas fa-pen icon"></i>Actualizar</a></li>
 			<li><a href=""><i class="fas fa-tasks icon"></i>Ver Todas</a></li>
-			<li><a href=""><i class="fas fa-door-open icon"></i>Cerrar Sesion</a></li>
+			<li><a href="cerrarSesion.jsp"><i class="fas fa-door-open icon"></i>Cerrar Sesion</a></li>
 		</ul>
                 <h3>Login: <%= misesion.getAttribute("usuario") %></h3>
 	</div>
