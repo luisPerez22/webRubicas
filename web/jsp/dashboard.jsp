@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +13,13 @@
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, miximum-scale=3.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../css/estilosDashboard.css">
 	<title>DashBoard</title>
-		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
+     <%
+        HttpSession misesion = request.getSession();
+        misesion.setAttribute("usuario", request.getParameter("usuario"));
+    %>
 	<div class="sidebar">
 		<h2>Menu</h2>
 		<ul>
@@ -25,6 +30,7 @@
 			<li><a href=""><i class="fas fa-tasks icon"></i>Ver Todas</a></li>
 			<li><a href=""><i class="fas fa-door-open icon"></i>Cerrar Sesion</a></li>
 		</ul>
+                <h3><%= misesion.getAttribute("usuario") %></h3>
 	</div>
 	<div class="contenedorPrincipal">
 		<h1>Esta cologedo como #nombre</h1>

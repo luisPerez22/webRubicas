@@ -16,7 +16,7 @@
 	<title>Iniciar Sesion</title>
 </head>
 <body>
-	<form class="formulario" action="">
+    <form class="formulario" action="dashboard.jsp" method="post">
 		<h1>Iniciar Sesion</h1>
 		<div class="contenedor">
 			<div class="input-contenedor">
