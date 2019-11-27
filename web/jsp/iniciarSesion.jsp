@@ -27,10 +27,10 @@
 				<i class="fas fa-key icon"></i>
 				<input type="password" id="clave" name="clave" placeholder="Contraseña" maxlength="50" required>
 			</div>
-                    <input type="submit" value="Registrarse" class="button" onclick="validarLogin()">
+                    <input type="submit" value="Iniciar sesion" class="button" onclick="validarLogin()">
 			<p>Inicie sesion con sus datos previamnete registrados en el sistema.</p>
 			<hr>
-			<p>¿Deseas crear una cuenta? <a class="link" href="../index.jsp">Iniciar Sesion</a></p>
+			<p>¿Deseas crear una cuenta? <a class="link" href="../index.jsp">Registrate</a></p>
 		</div>
 	</form>
 </body>

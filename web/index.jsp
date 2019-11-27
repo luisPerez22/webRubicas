@@ -16,7 +16,7 @@
 	<title>Registrarse</title>
 </head>
 <body>
-	<form class="formulario" action="">
+    <form class="formulario" action="jsp/registrarDocente.jsp" method="post"">
 		<h1>Registrate</h1>
 		<div class="contenedor">
 			<div class="input-contenedor">
@@ -43,6 +43,8 @@
 				<i class="fas fa-key icon"></i>
 				<input type="password" id="clave" name="clave" placeholder="Contraseña" maxlength="50" required>
 			</div>
+                    
+                    
 			<input type="submit" value="Registrarse" onclick="validarRegistro()" class="button">
 			<p>Registrarse con sus datos de docente para gestionar rubricas</p>
 			<hr>
