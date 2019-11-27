@@ -25,6 +25,10 @@ and open the template in the editor.
     <body>
         <%
             HttpSession misesion = request.getSession();
+            String nombre = (String)misesion.getAttribute("usuario");
+            if (nombre == null) {
+                response.sendRedirect("iniciarSesion.jsp");
+            }
         %>
         <div class="sidebar">
 		<h2>Menu</h2>

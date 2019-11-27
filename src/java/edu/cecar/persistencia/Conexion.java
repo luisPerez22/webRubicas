@@ -85,6 +85,28 @@ public class Conexion {
         return actualizado;
     }
      
+     public boolean login(String usuario, String clave){
+         boolean logeado = false;  
+         String user="", pass="";
+         
+         ResultSet rs = null;
+         try {
+            rs = stm.executeQuery("SELECT * FROM docente WHERE usuario='"+usuario+"'");
+            while(rs.next()){
+                user = rs.getString("usuario");
+                pass =rs.getString("contrasena");
+            }
+            if(user.equals(usuario) && pass.equals(clave)){
+                logeado = true;
+                System.out.println("si entro esa monda");
+            }else{
+                System.out.println("no entro ensa verga");
+            }
+         } catch (Exception e) {
+             System.out.println("algo pasa");
+         }
+         return logeado;
+     }
          
      public Docente buscar(String usuario) {
              Docente docente = new Docente();

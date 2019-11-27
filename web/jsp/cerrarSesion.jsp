@@ -13,8 +13,15 @@
     </head>
     <body>
         <%
-        session.invalidate();
-        response.sendRedirect("iniciarSesion.jsp");
+            HttpSession misesion = request.getSession();
+            String nombre = (String) misesion.getAttribute("usuario");
+
+            if (nombre != null) {
+                nombre = null;
+                session.invalidate();
+                
+            }
+            response.sendRedirect("iniciarSesion.jsp");
         %>
     </body>
 </html>

@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="edu.cecar.logica.Docente" %>
+<%@page session="true" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +18,8 @@
 	<title>Iniciar Sesion</title>
 </head>
 <body>
-    <form class="formulario" action="dashboard.jsp" method="post">
+
+    <form class="formulario" action="validadSesion.jsp" method="post">
 		<h1>Iniciar Sesion</h1>
 		<div class="contenedor">
 			<div class="input-contenedor">
