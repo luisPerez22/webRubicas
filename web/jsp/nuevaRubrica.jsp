@@ -25,7 +25,6 @@ and open the template in the editor.
     <body>
         <%
             HttpSession misesion = request.getSession();
-            misesion.setAttribute("usuario", request.getParameter("usuario"));
         %>
         <div class="sidebar">
 		<h2>Menu</h2>
@@ -37,7 +36,7 @@ and open the template in the editor.
 			<li><a href=""><i class="fas fa-tasks icon"></i>Ver Todas</a></li>
 			<li><a href=""><i class="fas fa-door-open icon"></i>Cerrar Sesion</a></li>
 		</ul>
-                <h3><%= misesion.getAttribute("usuario") %></h3>
+                <h3>Login: <%= misesion.getAttribute("usuario") %></h3>
 	</div>
         <div class="main">
             <h2 class="titulo" >Formulario Rubica</h2>
