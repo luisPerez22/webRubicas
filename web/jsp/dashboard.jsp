@@ -18,6 +18,7 @@
 <body>
         <%
             HttpSession misesion = request.getSession();
+            misesion.setAttribute("usuario", request.getParameter("usuario"));
         %>
         <h1></h1>
 	<div class="sidebar">
