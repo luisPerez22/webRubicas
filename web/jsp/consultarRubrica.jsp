@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true" %>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -16,16 +17,20 @@
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
     <body>
+        <%
+            HttpSession misesion = request.getSession();
+        %>
         <div class="sidebar">
             <h2>Menu</h2>
             <ul>
                 <li><a href="dashboard.jsp"><i class="fas fa-home icon"></i>Inicio</a></li>
-                <li><a href=""><i class="far fa-edit icon"></i>Nueva Rubrica</a></li>
+                <li><a href="nuevaRubrica.jsp"><i class="far fa-edit icon"></i>Nueva Rubrica</a></li>
                 <li><a href="consultarRubrica.jsp"><i class="fas fa-filter icon"></i>Buscar</a></li>
                 <li><a href=""><i class="fas fa-pen icon"></i>Actualizar</a></li>
                 <li><a href=""><i class="fas fa-tasks icon"></i>Ver Todas</a></li>
-                <li><a href=""><i class="fas fa-door-open icon"></i>Cerrar Sesion</a></li>
+                <li><a href="cerrarSesion.jsp"><i class="fas fa-door-open icon"></i>Cerrar Sesion</a></li>
             </ul>
+            <h3>Login: <%= misesion.getAttribute("usuario") %></h3>
         </div>
         <div class="contenedor">
             <form class="formulario" action="">
